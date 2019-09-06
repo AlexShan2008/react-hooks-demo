@@ -1,6 +1,6 @@
-### Reyun-Home
+# React Hooks Demos
 
-#### a zero config project use React & Next.js project
+## some demos use react hooks
 
 ## Development
 
@@ -54,7 +54,6 @@ yarn upgrade-interactive --latest # check release notes for breaking changes
 
 - [next.js](https://github.com/zeit/next.js)
 - [react](https://reactjs.org/)
-- [MobX](https://mobx.js.org/)
 - [react-jss](https://github.com/cssinjs/react-jss)
 - [material-ui](https://github.com/mui-org/material-ui)
 - [sass](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)

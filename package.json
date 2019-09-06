@@ -17,9 +17,6 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "lint": "lint-staged"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "lint-staged": {
     "*.jsx": [
       "prettier --write",
@@ -78,7 +75,10 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": [
+        "yarn lint"
+      ]
     }
   },
   "config": {

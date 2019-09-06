@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import useStyles from './styles'
-import Link from 'next/link'
+
 import { MeasureExample } from '@components'
 import Counter from '@components/counter'
 
