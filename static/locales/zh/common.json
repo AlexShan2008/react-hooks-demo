@@ -1,0 +1,9 @@
+{
+  "welcome": "Welcome to Create React Next.js!",
+  "header": "Re Next.js",
+  "dashboard": "首页",
+  "about-us": "关于我们",
+  "error-with-status": "A {{statusCode}} error occurred on server",
+  "404": "A {{statusCode}} error occurred on server",
+  "error-without-status": "An error occurred on the server"
+}
