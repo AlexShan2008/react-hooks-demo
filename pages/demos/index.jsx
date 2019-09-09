@@ -2,8 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import useStyles from './styles'
 
-import { MeasureExample } from '@components'
-import Counter from '@components/counter'
+import { Counter, MeasureExample } from '@components'
 
 const HomPage = props => {
   const classes = useStyles(props)
@@ -15,10 +14,10 @@ const HomPage = props => {
       </Head>
       <div>
         <div className={classes.root}>
-          <div className={classes.formWrap}>
-            <MeasureExample />
-            <Counter />
-          </div>
+          <h5 className={classes.title}>1 测量Header高度</h5>
+          <MeasureExample />
+          <h5 className={classes.title}>2 计数器</h5>
+          <Counter />
         </div>
       </div>
     </>

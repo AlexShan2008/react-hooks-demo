@@ -11,7 +11,7 @@ export default function MeasureExample () {
 
   return (
     <>
-      <h1 ref={measuredRef}>Hello, world</h1>
+      <h1 ref={measuredRef}>Header: Hello, world</h1>
       <h2>The above header is {Math.round(height)}px tall</h2>
     </>
   )

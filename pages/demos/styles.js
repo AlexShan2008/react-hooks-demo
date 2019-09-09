@@ -6,10 +6,17 @@ export default makeStyles(theme => ({
   root: {
     textAlign: 'center',
     color: '#333',
-    display: 'flex',
-    justifyContent: 'center',
     backgroundSize: 'cover',
     height: '100vh',
     width: '100%'
+  },
+  title: {
+    width: '100%',
+    textAlign: 'left',
+    fontSize: 24,
+    paddingLeft: 20,
+    lineHeight: '48px',
+    background: '#999',
+    color: '#fff'
   }
 }))
