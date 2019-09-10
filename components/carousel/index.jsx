@@ -26,13 +26,17 @@ function Controls (props) {
 
 function Slides ({ slides, width, currentIndex, children }) {
   const classes = useStyles()
-  return <div
-    className={classes.Slides}
-    style={{
-      width: slides.length * width + 'px',
-      left: -currentIndex * width + 'px'
-    }}
-  >{children}</div>
+  return (
+    <div
+      className={classes.Slides}
+      style={{
+        width: slides.length * width + 'px',
+        left: -currentIndex * width + 'px'
+      }}
+    >
+      {children}
+    </div>
+  )
 }
 Slides.propTypes = {
   slides: PropTypes.array.isRequired,
@@ -81,11 +85,15 @@ function SlideNav (props) {
 
 function SlideNavItem (props) {
   const classes = useStyles()
-  return <div className={
-    props.isCurrent
-      ? classes.SlideNavItem + ' active'
-      : classes.SlideNavItem
-  } />
+  return (
+    <div
+      className={
+        props.isCurrent
+          ? classes.SlideNavItem + ' active'
+          : classes.SlideNavItem
+      }
+    />
+  )
 }
 SlideNavItem.propTypes = {
   isCurrent: PropTypes.bool.isRequired
