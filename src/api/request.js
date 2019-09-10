@@ -1,23 +1,20 @@
 const axios = require('axios')
 const {
-  getI18nLng
-} = require("@utils");
-
-const {
   origin,
   devOrigin,
   pathname,
   productionHostName
-} = require('@config');
+} = require('@config')
 
 const store = require('store')
 
-let hostname = 'localhost';
+let hostname = 'localhost'
 
 if (typeof location !== 'undefined') {
+  // eslint-disable-next-line no-undef
   hostname = location.hostname
 }
-const isProd = hostname == productionHostName;
+const isProd = hostname === productionHostName
 const baseURL = isProd ? origin + pathname : devOrigin + pathname
 
 axios.defaults.baseURL = baseURL
@@ -28,6 +25,7 @@ axios.defaults.withCredentials = false
 axios.interceptors.response.use((response) => {
   const data = response.data
   if (data.code === -1) {
+  // eslint-disable-next-line no-undef
     location.href = '/'
   }
   return response
@@ -43,6 +41,7 @@ axios.interceptors.response.use((response) => {
         break
 
       case 401:
+        // eslint-disable-next-line no-undef
         location.href = '/'
         err.message = 'token已过期，请重新登录！'
         store.clearAll()
@@ -50,10 +49,10 @@ axios.interceptors.response.use((response) => {
       default:
     }
   }
-  return Promise.reject(err);
+  return Promise.reject(err)
 })
 
-function fetch(url, params, responseType) {
+function fetch (url, params, responseType) {
   return new Promise((resolve, reject) => {
     const token = store.get('token')
     let Authorization = ''
@@ -63,11 +62,11 @@ function fetch(url, params, responseType) {
 
     axios.post(url, params, {
 
-        headers: {
-          'Authorization': Authorization,
-        },
-        responseType
-      })
+      headers: {
+        Authorization: Authorization
+      },
+      responseType
+    })
       .then(response => {
         resolve(response.data)
       }, err => {
@@ -79,15 +78,15 @@ function fetch(url, params, responseType) {
   })
 }
 
-function fetchGet(url, params, responseType) {
+function fetchGet (url, params, responseType) {
   return new Promise((resolve, reject) => {
     axios.get(url, {
-        params: params,
-        headers: {
-          'Authorization': store.get('token'),
-        },
-        responseType
-      })
+      params: params,
+      headers: {
+        Authorization: store.get('token')
+      },
+      responseType
+    })
       .then(response => {
         resolve(response.data)
       }, err => {

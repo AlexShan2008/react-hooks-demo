@@ -5,7 +5,7 @@ const {
 } = require('../i18n')
 
 const isLogin = () => {
-  return store.get("token")
+  return store.get('token')
 }
 
 const setToken = value => {
@@ -34,7 +34,7 @@ const getI18nLng = () => {
 
 const setI18nLng = (lang) => {
   setData('language', lang)
-  i18n.changeLanguage(lng);
+  i18n.changeLanguage(lang)
   axios.defaults.headers.common['Accept-Language'] = lang
   document.querySelector('html').setAttribute('lang', lang)
   return lang
@@ -44,23 +44,23 @@ const storeEncryptedUserName = (data) => {
   const {
     email,
     mobile
-  } = data;
-  let userName = {};
-  let mobileStart = "";
-  let emailStart = "";
-  let mobileEnd = "";
-  let emailEnd = "";
+  } = data
+  const userName = {}
+  let mobileStart = ''
+  let emailStart = ''
+  let mobileEnd = ''
+  let emailEnd = ''
 
   if (mobile) {
-    mobileStart = mobile.slice(0, 3);
-    mobileEnd = mobile.slice(7);
-    return mobile ? mobileStart + "****" + mobileEnd : ""
+    mobileStart = mobile.slice(0, 3)
+    mobileEnd = mobile.slice(7)
+    return mobile ? mobileStart + '****' + mobileEnd : ''
   }
 
   if (email) {
-    emailStart = email.slice(0, 3);
-    emailEnd = email.slice(7);
-    return email ? emailStart + "****" + emailEnd : ""
+    emailStart = email.slice(0, 3)
+    emailEnd = email.slice(7)
+    return email ? emailStart + '****' + emailEnd : ''
   }
 }
 

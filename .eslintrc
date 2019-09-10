@@ -1,9 +1,10 @@
 {
   "parser": "babel-eslint",
-  "extends": ["standard", "standard-react"],
+  "extends": ["standard", "standard-react", "plugin:jsx-a11y/recommended"],
   "plugins": [
     // ...
-    "react-hooks"
+    "react-hooks",
+    "jsx-a11y"
   ],
   "rules": {
     // ...

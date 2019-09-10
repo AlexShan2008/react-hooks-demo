@@ -7,11 +7,11 @@ export default {
   /**
    * 登录
    */
-  login(params) {
+  login (params) {
     return fetch('/login', params)
   },
   // 退出登录
-  logout(params) {
+  logout (params) {
     return fetch('/logout', params)
-  },
+  }
 }

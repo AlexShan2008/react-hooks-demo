@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import useStyles from './styles'
 
-import { Counter, MeasureExample } from '@components'
+import { Carousel, Counter, MeasureExample, Media } from '@components'
+import { SLIDES } from './data'
 
-const HomPage = props => {
-  const classes = useStyles(props)
+const HomPage = () => {
+  const classes = useStyles()
+  const [options] = useState({
+    width: 500,
+    height: 500,
+    duration: 2000,
+    slides: SLIDES
+  })
 
   return (
     <>
@@ -18,6 +25,10 @@ const HomPage = props => {
           <MeasureExample />
           <h5 className={classes.title}>2 计数器</h5>
           <Counter />
+          <h5 className={classes.title}>3 useMedia</h5>
+          <Media />
+          <h5 className={classes.title}>4 Carousel</h5>
+          <Carousel options={options} />
         </div>
       </div>
     </>

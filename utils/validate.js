@@ -1,25 +1,25 @@
 const isNumber = number => {
   if (!number) {
-    return false;
+    return false
   }
-  const reg = /^\d+$/;
-  return reg.test(number.trim());
+  const reg = /^\d+$/
+  return reg.test(number.trim())
 }
 
 const isValidPhone = phone => {
   if (!phone) {
-    return false;
+    return false
   }
-  const reg = /^1[3456789]\d{9}$/;
-  return reg.test(phone.trim());
+  const reg = /^1[3456789]\d{9}$/
+  return reg.test(phone.trim())
 }
 
 const isValidEmail = email => {
   if (!email) {
-    return false;
+    return false
   }
-  const reg = /^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i;
-  return reg.test(email.trim());
+  const reg = /^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i
+  return reg.test(email.trim())
 }
 
 const isValidUserName = username => {
@@ -43,8 +43,8 @@ const isValidPassword = password => {
 }
 
 const isValidCaptcha = captcha => {
-  const reg = /^\d{6}$/;
-  return reg.test(captcha.trim());
+  const reg = /^\d{6}$/
+  return reg.test(captcha.trim())
 }
 
 export {
