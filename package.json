@@ -37,7 +37,7 @@
     "@zeit/next-sass": "^1.0.1",
     "antd": "^3.20.5",
     "axios": "^0.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mobx": "^5.13.0",
     "mobx-react": "^6.1.1",
     "moment": "^2.24.0",
